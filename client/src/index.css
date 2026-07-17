@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+/* Theme overrides & custom components using standard modern CSS */
+:root {
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --background: 240 10% 3.9%;
+  --foreground: 0 0% 98%;
+  --primary: 247 89% 60%; /* Premium Indigo */
+  --primary-foreground: 0 0% 98%;
+  --card: 240 10% 3.9%;
+  --card-foreground: 0 0% 98%;
+  --border: 240 3.7% 15.9%;
+  --ring: 240 4.9% 83.9%;
+}
+
+@theme {
+  --color-primary-indigo: #6366f1;
+  --color-dark-surface: #0a0a0c;
+  --color-dark-card: rgba(18, 18, 22, 0.7);
+  --color-border-subtle: rgba(255, 255, 255, 0.08);
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #0b0b0f;
+  color: #f3f4f6;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+/* Light theme support */
+.light-theme {
+  background-color: #f8fafc;
+  color: #0f172a;
+}
+
+.light-theme body {
+  background-color: #f8fafc;
+  color: #0f172a;
+}
+
+/* Custom premium styles */
+.glass {
+  background: rgba(18, 18, 22, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.light-theme .glass {
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  color: #0f172a;
+}
+
+.glass-card {
+  background: rgba(20, 20, 26, 0.55);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.light-theme .glass-card {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.05);
+}
+
+.glass-card:hover {
+  border-color: rgba(99, 102, 241, 0.4);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px 0 rgba(99, 102, 241, 0.15);
+}
+
+/* Gradient text */
+.text-gradient {
+  background: linear-gradient(135deg, #a5b4fc 0%, #6366f1 50%, #4f46e5 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #09090b;
+}
+
+.light-theme ::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(99, 102, 241, 0.3);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(99, 102, 241, 0.6);
+}
