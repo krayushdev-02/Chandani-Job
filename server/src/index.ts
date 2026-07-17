@@ -36,6 +36,18 @@ app.use(
   })
 );
 
+// Root welcome endpoint
+app.get('/', (req, res) => {
+  res.status(200).send(`
+    <div style="font-family: sans-serif; text-align: center; padding: 50px;">
+      <h1 style="color: #4f46e5;">ChandandiJobs Backend API</h1>
+      <p style="color: #6b7280;">Connecting Talent with Opportunity.</p>
+      <p>The backend service is online and operational.</p>
+      <p>Check the health status at <a href="/health" style="color: #4f46e5; text-decoration: none; font-weight: bold;">/health</a>.</p>
+    </div>
+  `);
+});
+
 // Health check endpoint
 app.get('/health', (req, res) => {
   res.status(200).json({ status: 'OK', message: 'Backend service is operational' });
